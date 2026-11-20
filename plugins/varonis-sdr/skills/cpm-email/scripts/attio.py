@@ -6,12 +6,16 @@ BASE = "https://api.attio.com/v2"
 # The ONLY fields this skill may read. Everything else is dropped before the agent sees it.
 PERSON_READ = ["name", "email_addresses", "job_title", "salesforce_title", "company", "past_meeting_date",
                "cpm_obtained", "cpm_not_obtained_reason", "cpm_route", "cpm_route_reason", "cpm_concepts",
-               "cpm_concept_tags", "cpm_evidence", "cpm_past_rep", "cpm_stall_reason", "cpm_stall_quote",
-               "cpm_draft", "cpm_draft_status", "cpm_updates_used"]
+               "cpm_concept_tags", "cpm_evidence", "cpm_past_rep", "cpm_stall_reason", "cpm_stall_quote"]
 COMPANY_READ = ["name", "account_rep"]
 UPDATE_READ = ["name", "released_5", "what_it_adds", "concept_tags", "use_case", "quote", "source", "verification"]
-# The ONLY fields this skill may write.
-PERSON_WRITE = ["cpm_draft", "cpm_draft_status", "cpm_updates_used"]
+DRAFT_READ = ["name", "person", "campaign", "kind", "subject", "body", "updates_used", "rules_version", "status",
+              "drafted_at", "review_notes", "supersedes"]
+# The ONLY object this skill writes is Email Drafts, and only these fields.
+DRAFT_CREATE = ["name", "person", "campaign", "kind", "subject", "body", "body_html", "updates_used", "rules_version",
+                "status", "drafted_at", "supersedes"]
+DRAFT_UPDATE = ["status", "review_notes"]
+AGENT_STATUSES = {"Drafted", "Reviewed", "Superseded"}  # Approved = John; Pushed/Failed = push skill
 REPS = {"Todd Cencich", "Rob Andersen", "Patrick Dolan"}
 
 
@@ -38,7 +42,7 @@ def flat(values, slug):
         elif "target_record_id" in v: out.append(v["target_record_id"])
         elif "value" in v: out.append(v["value"])
     if not out: return None
-    return out if len(out) > 1 or slug in ("cpm_concept_tags", "cpm_route_reason", "concept_tags", "cpm_updates_used", "email_addresses") else out[0]
+    return out if len(out) > 1 or slug in ("cpm_concept_tags", "cpm_route_reason", "concept_tags", "updates_used", "email_addresses") else out[0]
 
 
 def project(record, allow):

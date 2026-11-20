@@ -1,11 +1,13 @@
 """Read everything the CPM skill needs from Attio, allow-listed.
 Usage:
-  python3 cpm_read.py people [--only-pending]   -> people in "Prioritized - Past Meetings" (JSON)
-  python3 cpm_read.py updates                   -> Varonis Updates rows (JSON)
+  python3 cpm_read.py people [--only-pending]   -> people in "Prioritized - Past Meetings" + their latest CPM draft status
+  python3 cpm_read.py updates                   -> Varonis Updates rows
   python3 cpm_read.py rules                     -> Writing Rules record "CPM email" (rules + examples)
+  python3 cpm_read.py drafts                    -> all CPM Email Drafts (newest first)
+--only-pending keeps people with no live draft (none, or only Superseded/Failed).
 """
 import datetime, json, sys
-from attio import call, flat, project, PERSON_READ, COMPANY_READ, UPDATE_READ, REPS
+from attio import call, flat, project, PERSON_READ, COMPANY_READ, UPDATE_READ, DRAFT_READ, REPS
 
 
 def view_people():
@@ -26,8 +28,24 @@ def view_people():
     return keep
 
 
+def drafts():
+    recs = call("POST", "/objects/email_drafts/records/query", {"filter": {"campaign": "CPM"}, "limit": 1000})["data"]
+    rows = [project(r, DRAFT_READ) for r in recs]
+    for r, raw in zip(rows, recs): r["created_at"] = raw["created_at"]
+    return sorted(rows, key=lambda x: x["created_at"], reverse=True)
+
+
+def latest_by_person(rows):
+    out = {}
+    for d in rows:  # newest first
+        if d["status"] == "Superseded": continue
+        out.setdefault(d["person"], d)
+    return out
+
+
 def people(only_pending):
     out, companies = [], {}
+    live = latest_by_person(drafts())
     for r in view_people():
         p = project(r, PERSON_READ)
         cid = p.pop("company")
@@ -37,7 +55,9 @@ def people(only_pending):
             companies[cid] = c
         p["company_name"] = companies.get(cid, {}).get("name")
         p["account_rep"] = companies.get(cid, {}).get("account_rep")
-        if only_pending and p.get("cpm_draft_status") not in (None, "Drafted"): continue
+        d = live.get(p["record_id"])
+        p["latest_draft_id"], p["latest_draft_status"] = (d["record_id"], d["status"]) if d else (None, None)
+        if only_pending and p["latest_draft_status"] not in (None, "Failed"): continue
         out.append(p)
     return out
 
@@ -56,5 +76,5 @@ def rules():
 
 if __name__ == "__main__":
     cmd = sys.argv[1]
-    data = {"people": lambda: people("--only-pending" in sys.argv), "updates": updates, "rules": rules}[cmd]()
+    data = {"people": lambda: people("--only-pending" in sys.argv), "updates": updates, "rules": rules, "drafts": drafts}[cmd]()
     print(json.dumps(data, indent=1, ensure_ascii=False))
