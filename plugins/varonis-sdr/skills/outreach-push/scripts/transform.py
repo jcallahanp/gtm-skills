@@ -4,6 +4,7 @@ Rules (in order):
  1. Drop a leading greeting addressed to the person: "Hey Darin - ", "Hi Mark - ", "Steve - ", "Hey Josh," (greeting-only paragraph is dropped).
  2. Capitalize the first letter of what is left.
  3. Drop trailing sign-off paragraphs (Best / Thanks / Regards / Cheers / Sincerely, with or without a name) and a last paragraph that is only a name.
+ 3b. Add "Best," as the last paragraph (the sequence adds the full signature under it).
  4. Build HTML: one <p> per paragraph, <p><br></p> between paragraphs, <br> for a line break inside a paragraph, text HTML-escaped.
  5. Refuse (raise) if the first name still appears in the first 4 words, or a sign-off is still present.
 """
@@ -27,6 +28,7 @@ def clean(body, first_name):
     if not paras: raise ValueError("empty body after clean-up")
     if re.search(rf"\b{fn}\b", " ".join(paras[0].split()[:4]), re.I): raise ValueError("first name still at the top")
     if SIGNOFF.match(paras[-1]): raise ValueError("sign-off still present")
+    paras.append("Best,")
     text = "\n\n".join(paras)
     html_body = "<p><br></p>".join("<p>" + html.escape(p).replace("\n", "<br>") + "</p>" for p in paras)
     return text, html_body

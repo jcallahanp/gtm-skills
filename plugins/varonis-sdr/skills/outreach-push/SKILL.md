@@ -11,7 +11,7 @@ description: Use when John says to push, send or load approved CPM emails into O
 2. Never rewrite the email. The only changes are the mechanical ones in `scripts/transform.py`:
    - remove the greeting addressed to the person ("Hey Darin - ", "Steve - ", a "Hey Josh," line), because Outreach 1419 adds "Hi {first name},";
    - capitalize the new first letter;
-   - remove any sign-off ("Best,", "Thanks", a name), because the sequence adds the signature;
+   - remove any sign-off the draft has ("Best,", "Thanks", a name), then add exactly one "Best," as the last paragraph; the sequence adds the full email signature under it, so never add a name or signature block;
    - build the HTML: one `<p>` per paragraph, `<p><br></p>` between paragraphs.
    If the script reports a problem for a draft, skip that draft and tell John.
 3. Pass `clay_inputs` to Clay exactly as the script printed them. Do not edit any value.
