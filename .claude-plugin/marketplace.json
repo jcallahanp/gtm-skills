@@ -1,0 +1,7 @@
+{
+  "name": "gtm-skills",
+  "owner": { "name": "gtm-skills" },
+  "plugins": [
+    { "name": "varonis-sdr", "source": "./plugins/varonis-sdr", "description": "SDR skills that run off Attio." }
+  ]
+}

@@ -1,0 +1,5 @@
+*.json.local
+plan.json
+*.xlsx
+__pycache__/
+.env
