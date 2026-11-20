@@ -20,6 +20,7 @@ if paras and paras[-1] == asks[2] and not holiday_ok: fails.append("holiday ask 
 if len(paras) > 2 and f"{plan_year} roadmap" not in paras[2]: fails.append(f"¶3 lacks '{plan_year} roadmap'")
 if len(body.split()) >= 90: fails.append(f"{len(body.split())} words, need under 90")
 if re.search(r"\bports?\b|firewall|service account|collector|helm|\beks\b|cloudformation|app registration|prerequisite|\bpatch", body, re.I): fails.append("setup word present")
+if re.search(r"back and fourth|now that is been|\bthis years\b|\byour all's\b", body, re.I): fails.append("known spelling/grammar error copied from an example")
 if re.search(r"cutting-edge|industry-leading|best-in-class|revolutionary|!", body, re.I): fails.append("hype word or exclamation mark")
 for rep in ["Todd Cencich", "Rob Andersen", "Patrick Dolan"]:
     if rep in body and rep != p.get("account_rep"): fails.append(f"names {rep} but account_rep is {p.get('account_rep')}")

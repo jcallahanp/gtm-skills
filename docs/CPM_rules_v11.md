@@ -1,8 +1,8 @@
 # Contacts Past Meetings (CPM) – how to write the email
 
-Version 10. Replaces v9 (2026-11-20: Attio meeting fields banned; loop-you-in only when John names a recent meeting; card or held → stage Needs John). v9 added fewer cards, examples J–L, new asks, no-context line, recent-meeting tone. Data: "Past Meetings Consolidated v6" (sheet "Obtained") and "Varonis Updates Master v2", both in the Past Meetings Skills folder. Run steps are in "Past Meetings Email – HOW TO RUN". John's examples and the original template are kept word for word (sections 9 and 10).
+Version 11. Replaces v10 (2026-11-20: examples are directional, never copy their errors; never pivot away from a clear recent topic, Example M). v10 (2026-11-20: Attio meeting fields banned; loop-you-in only when John names a recent meeting; card or held → stage Needs John). v9 added fewer cards, examples J–L, new asks, no-context line, recent-meeting tone. Data: "Past Meetings Consolidated v6" (sheet "Obtained") and "Varonis Updates Master v2", both in the Past Meetings Skills folder. Run steps are in "Past Meetings Email – HOW TO RUN". John's examples and the original template are kept word for word (sections 9 and 10).
 
-How to use this doc: the rules in sections 0–8 are the few things that must always hold. For tone, framing and judgment calls, follow John's examples in section 9 – pick the example closest to the case and write the way John wrote it. When a rule and an example seem to differ on style, follow the example; when they differ on a guardrail (section 0), follow the guardrail.
+How to use this doc: the rules in sections 0–8 are the few things that must always hold. **The examples are directional guides, not text to copy.** Extrapolate from them to similar hard cases. Never copy a spelling or grammar error from an example; always write correct English. For tone, framing and judgment calls, follow John's examples in section 9 – pick the example closest to the case and write the way John wrote it. When a rule and an example seem to differ on style, follow the example; when they differ on a guardrail (section 0), follow the guardrail.
 
 ## 0. GUARDRAILS – read first, never break
 
@@ -75,8 +75,9 @@ No draft text. A reviewed card goes to stage "Needs John" on the Kanban.
 4. **Say "major" only when it is true for this person:** either one specific, big shift (for example the launch of the AI security platform, or Proofpoint's pending acquisition of Varonis), or a specific update that is highly relevant to what they talked about. For broad platform development or small changes in their space, use plain wording ("share our platform updates including …"). If "major" would sound salesy, or the rep would only be catching them up on small changes in the meeting, leave it out.  
 5. **Proofpoint's pending acquisition of Varonis** (Updates Master, Oct 2026) may be mentioned when Proofpoint came up, or when the area they looked at is strongly affected by it (for example email security / Interceptor). See Example G.  
 6. **If the reason it stalled was budget, mention our pricing changes** in ¶2 or ¶3 (Examples A and F).  
-7. When nothing in the Updates Master fits the topic, write a platform-level line instead, the way Examples D and F do. Choose the angle closest to their topic.  
-8. **No context at all** (vague topic, recurring pattern, account-level data): use the broad AI line so that an AI, SOC or DAM reader all stay interested: "how we've rebuilt the platform around AI, securing AI use while automating detection, response and data protection" (Example K), or "our major identity and SOC developments, including identity-aware control of AI agents and faster AI-driven investigation" when the topic was identity or SOC (Example J).  
+7. **Never pivot away from a clear topic.** If the topic is clear (for example DAM) and the meeting was recent, there has been no big change since that they did not see. Do not switch to an unrelated platform line; offer "a few key updates with you" and stop (Example M). Use the 4.8 lines only when the topic is unclear.  
+7b. When nothing in the Updates Master fits the topic, write a platform-level line instead, the way Examples D and F do. Choose the angle closest to their topic.  
+8. **No context at all** (vague or no topic, recurring pattern, account-level data; never after a recent meeting with a clear topic): use the broad AI line so that an AI, SOC or DAM reader all stay interested: "how we've rebuilt the platform around AI, securing AI use while automating detection, response and data protection" (Example K), or "our major identity and SOC developments, including identity-aware control of AI agents and faster AI-driven investigation" when the topic was identity or SOC (Example J).  
 9. **Title sets the breadth.** For executives (CIO, CISO, VP), name the original topic and at most one big platform (for example the AI security platform). Never a narrow feature, even if one exists (Example L).
 
 ## 5. The four paragraphs
@@ -125,6 +126,7 @@ Everything else – greeting, verbs, connectors, light remarks, how much detail,
 | Same evidence for several people at the account; former customer | J – Brian / Scott |
 | Recurring / customer pattern, no clear topic | K – Brian Peck |
 | Recent meeting, executive title, topic from an install or support detail | L – Kevin |
+| Recent meeting, clear topic, no matching update | M – Samuel |
 | No topic at all | Card (section 2) |
 
 ## 8. Checklist – run before giving the email
@@ -140,7 +142,7 @@ Everything else – greeting, verbs, connectors, light remarks, how much detail,
 9. Every fact about the meeting comes from the "Obtained" sheet, every update from the Updates Master, Attio only for rep and contact details?  
 10. Under 90 words, no feature list, no hype words?
 
-## 9. Examples (A–F and J–L written by John, G–I drafted and approved by John; all word for word)
+## 9. Examples (A–F and J–M written by John, G–I drafted and approved by John; spelling and grammar corrected 2026-11-20 – examples are directional, not text to copy)
 
 ### Example A – unclear topic, reason known (Darin, VT Industries)
 
@@ -190,7 +192,7 @@ John's rationale: "We do not know what he is concerned with. We can take a educa
 
 Hey Kong - understand we had an RFP going for you guys back in late 2023 for our DLP solution but it looks like that ended up falling through.
 
-Looking to reconnect you with Patrick Dolan now that is been a few years.
+Looking to reconnect you with Patrick Dolan now that it's been a few years.
 
 Purpose would be to discuss your 2027 roadmap and introduce our major DLP updates including automated labeling built for DLP enforcement and more precise sensitive data classification.
 
@@ -252,11 +254,11 @@ Would one day afford 30 minutes for this convo over the next few weeks?
 
 ### Example K – recurring / customer pattern, no clear topic (Brian Peck, Sammons) – John, 2026-11-20
 
-Hey Brian - looks like you were part of the back and fourth with Varonis a few years ago.
+Hey Brian - looks like you were part of the back and forth with Varonis a few years ago.
 
 Looking to reconnect you with Rob Andersen to reintroduce Varonis now that it's been some time.
 
-Purpose would be to discuss this years roadmap and share how we’ve rebuilt the platform around AI, securing AI use while automating detection, response and data protection.
+Purpose would be to discuss this year's roadmap and share how we’ve rebuilt the platform around AI, securing AI use while automating detection, response and data protection.
 
 Would some time next week afford 30 minutes for this conversation?
 
@@ -275,6 +277,20 @@ Purpose would be to discuss your 2027 roadmap and share a few key updates with y
 Would one day next week afford 30 minutes for this convo?
 
 John's notes: "as this year comes to an end" sounds natural for a meeting only a year ago. "A few key updates" keeps it low-key after a recent meeting. A CIO is not 100% focused on email security, so in this limited case touch briefly on AI as a second angle, still name the original topic (Interceptor), and stay broad; never get specific about one small update with a CIO.
+
+### Example M – recent meeting, clear topic, no pivot (Samuel Wolf, Principal) – John, 2026-11-20
+
+Samuel,
+
+Understand our teams had a lunch and learn set up back in March around DAM.
+
+Hoping to reconnect you with Rob Andersen as this year comes to an end.
+
+Purpose would be to discuss your 2027 roadmap and share a few key updates with you.
+
+Would one day next week afford 30 minutes for this convo?
+
+John's notes: March is very recent, so there was no major AI platform change he has not seen. The topic is clearly DAM. Keep it vague with "a few key updates" instead of acknowledging DAM and then pivoting to something else.
 
 ## 10. Original template and example (word for word)
 
