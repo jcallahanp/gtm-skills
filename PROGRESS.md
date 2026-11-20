@@ -28,3 +28,9 @@ Next
 - 2026-11-20: push path fixed. Cause: the workflow's manual trigger was paused (connector ERROR_BAD_REQUEST, API "Trigger not found"). Trigger set to live (no paused runs resumed). Verified: connector run wfr_0tot7y3YzYAyPFBjAkP on the published snapshot, fake email → skip "Not found in Outreach". Skill now reads the decision via get-task-context; skip → Failed.
 - 2026-11-20: first live push done. Nahuel v2 → Approved (chat) → Clay run wfr_0tot86k2MWnKw2T8pDo, all steps completed, decision ok → Outreach prospect 1046615, sequence 1419 → draft Pushed. Waiting for John to check it in Outreach.
 - Run the skill on 3 people with a separate reviewer, then the full batch (32 drafts + 9 cards).
+
+## Full run (started 2026-11-20)
+John: "draft them out for all the eligible past meetings and then approve and push them all".
+- Scope: 36 Obtained people with no draft (27 Draft route → emails, 9 Needs John → cards). Excluded: excludes file (2). Already drafted: Brian Nelson, Rick DeLoach (Reviewed), Nahuel (Pushed).
+- Process: 4 writer agents (9 people each) → 4 different reviewer agents → push only emails with review pass. Cards and Not-obtained people are never pushed.
+- Restart: rerun `cpm_read.py people --only-pending`; anyone with latest_draft_status set is done for drafting. Push = Approved/Reviewed emails not yet Pushed.
