@@ -23,13 +23,19 @@ if live:
     if live["status"] == "Pushed": raise SystemExit("Latest draft was already pushed. Not replacing.")
     if live["status"] == "Approved" and not x.replace_approved: raise SystemExit("Latest draft is Approved. Ask John; rerun with --replace-approved only if he says so.")
 today = datetime.date.today().isoformat()
+
+
+def to_html(paras):
+    """Each paragraph becomes its own <p>; an empty <p><br></p> sits between paragraphs so Outreach shows a blank line.
+    A single line break inside a paragraph becomes <br>. Text is HTML-escaped."""
+    return "<p><br></p>".join("<p>" + html.escape(p).replace("\n", "<br>") + "</p>" for p in paras)
 paras = [p.strip() for p in body.split("\n\n") if p.strip()]
 values = {
     "name": f"CPM – {x.name} – {today} (v{len(mine) + 1})",
     "person": [{"target_object": "people", "target_record_id": x.person}],
     "campaign": "CPM", "kind": "Email" if x.kind == "email" else "Needs John card",
     "subject": x.subject, "body": body,
-    "body_html": "".join(f"<p>{html.escape(p).replace(chr(10), '<br>')}</p>" for p in paras),
+    "body_html": to_html(paras),
     "updates_used": [{"target_object": "varonis_updates", "target_record_id": u} for u in x.updates],
     "rules_version": x.rules_version, "status": "Drafted", "drafted_at": today,
 }
