@@ -52,3 +52,4 @@ John: "draft them out for all the eligible past meetings and then approve and pu
 - Totals now: 12 in 1419 (incl. Nahuel).
 - Retry 2 (clay task mcp-task_0tota3yvZqZSTgxESQK): added Darin Gottman, Chris Gervich, Hermann Kelley, Kong Tran, Steve Hickle, Sam Kolars. Philip Tyson still active in "Email Only".
 - Totals now: 18 in 1419 (incl. Nahuel).
+- Craig Galley: two Attio records merged into the JEA one (new id 8765715d…; COJ record merged in). Added to excludes: Todd is talking to him, never push.
