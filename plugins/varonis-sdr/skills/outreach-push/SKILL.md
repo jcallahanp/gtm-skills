@@ -16,7 +16,7 @@ description: Use when John says to push, send or load approved CPM emails into O
    If the script reports a problem for a draft, skip that draft and tell John.
 3. Pass `clay_inputs` to Clay exactly as the script printed them. Do not edit any value.
 4. Approval is John's, given in chat. When John names drafts as approved, run `python3 ${CLAUDE_SKILL_DIR}/scripts/push_approve.py DRAFT_ID ...` (only Reviewed/Drafted Email drafts change; it writes status only). When John says "send those" / "send them", that is standing approval for every draft he approved: run the push for all of them with no more questions. Show the dry run (step 2) as information, not as a question. If a draft fails a guardrail, skip it and report it.
-5. One draft per Clay run. Record every result in Attio, so a rerun never pushes twice.
+5. One draft per Clay workflow run. Several drafts may go in one `run_subroutine_direct` call (one input object each; Clay starts one run per input); match each result back to its draft by `email`. Record every result in Attio, so a rerun never pushes twice.
 
 ## Steps
 
@@ -35,4 +35,5 @@ description: Use when John says to push, send or load approved CPM emails into O
 - `ATTIO_API_KEY` in the environment; the Clay MCP connector.
 - The workflow's manual trigger (`cf33d8be-3be0-4bf0-85a1-a94de197e9a3`) must be **live**. If it is paused, the connector returns `ERROR_BAD_REQUEST` and the Public API returns "Trigger … not found". Fix: `clay workflows triggers update cf33d8be-3be0-4bf0-85a1-a94de197e9a3 --input '{"status":"live"}'` (never with `--resume-paused-runs`). The connector runs the **published** version of the workflow: publish changes in Clay before pushing.
 - The workflow skips (never creates) people not found in Outreach, opted out, or active in any sequence. It looks them up by email or prospect id.
+- Known gap: "Safe to queue?" does not check whether the prospect was in 1419 before. Outreach then refuses "Prospect has already been in this sequence" at Add to sequence (state `error`), after Personal Notes were already written. Record it as Failed with that reason.
 - Outreach sequence 1419 template adds "Hi {first name}," and the signature; Clay writes the body to Outreach's Personal Note fields.

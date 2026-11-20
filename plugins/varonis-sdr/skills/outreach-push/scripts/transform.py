@@ -2,6 +2,7 @@
 The 1419 template adds "Hi {first name}," and the signature, so the body must have neither.
 Rules (in order):
  1. Drop a leading greeting addressed to the person: "Hey Darin - ", "Hi Mark - ", "Steve - ", "Hey Josh," (greeting-only paragraph is dropped).
+    A greeting word plus any one name is also dropped, for nicknames ("Hey Wes - ", "Hi Meer - ").
  2. Capitalize the first letter of what is left.
  3. Drop trailing sign-off paragraphs (Best / Thanks / Regards / Cheers / Sincerely, with or without a name) and a last paragraph that is only a name.
  3b. Add "Best," as the last paragraph (the sequence adds the full signature under it).
@@ -16,7 +17,8 @@ SIGNOFF = re.compile(r"^(best|thanks|thank you|many thanks|regards|best regards|
 def clean(body, first_name):
     paras = [p.strip() for p in re.split(r"\n\s*\n", body.strip()) if p.strip()]
     fn = re.escape(first_name.strip())
-    greet = re.compile(rf"^(?:(?:hey|hi|hello|good morning|good afternoon)\s+)?{fn}\s*(?:-|–|—|,|:)\s*", re.I)
+    greet = re.compile(rf"^(?:(?:hey|hi|hello|good morning|good afternoon)\s+)?{fn}\s*(?:-|–|—|,|:)\s*"
+                       rf"|^(?:hey|hi|hello|good morning|good afternoon)\s+[A-Z][\w'.]*\s*(?:-|–|—|,|:)\s*", re.I)
     if paras:
         first = greet.sub("", paras[0], count=1).strip()
         if first:
@@ -28,6 +30,7 @@ def clean(body, first_name):
     if not paras: raise ValueError("empty body after clean-up")
     if re.search(rf"\b{fn}\b", " ".join(paras[0].split()[:4]), re.I): raise ValueError("first name still at the top")
     if SIGNOFF.match(paras[-1]): raise ValueError("sign-off still present")
+    if re.match(r"(hey|hi|hello|good morning|good afternoon)\b", paras[0], re.I): raise ValueError("greeting still at the top")
     paras.append("Best,")
     text = "\n\n".join(paras)
     html_body = "<p><br></p>".join("<p>" + html.escape(p).replace("\n", "<br>") + "</p>" for p in paras)

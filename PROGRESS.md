@@ -34,3 +34,15 @@ John: "draft them out for all the eligible past meetings and then approve and pu
 - Scope: 36 Obtained people with no draft (27 Draft route → emails, 9 Needs John → cards). Excluded: excludes file (2). Already drafted: Brian Nelson, Rick DeLoach (Reviewed), Nahuel (Pushed).
 - Process: 4 writer agents (9 people each) → 4 different reviewer agents → push only emails with review pass. Cards and Not-obtained people are never pushed.
 - Restart: rerun `cpm_read.py people --only-pending`; anyone with latest_draft_status set is done for drafting. Push = Approved/Reviewed emails not yet Pushed.
+
+### Full run results (2026-11-20)
+- Drafted 36 (27 emails, 9 cards). Review round 1: 28 pass, 8 fail. Rewrite: 4 new drafts (Phillip Graves, Samuel Wolf, Scott Edmonston, Philip Tyson) under re-review; 4 sent to John, no real concept beyond invite agenda/placeholder (Randy Remington, Justin Barta, Paul Forst, Jason Duff).
+- Held for John: Brian Nelson (John disliked earlier text), David Sypros (evidence emails addressed to "John" at Landstar; attendance unclear).
+- Pushed 19 approved emails in one Clay task (mcp-task_0tot8spjmECmbbiQTQX):
+  - Added to 1419 (Pushed): Carl Luke, Jim Mountain, Saif Arif, Pedameerasa Chennupalli, Eric Lukens, Chris Sundell.
+  - Skipped, active in "Callahan: Email Sequence": Sam Kolars, Steve Hickle, Darin Gottman, Hermann Kelley, Kong Tran, Chris Gervich.
+  - Skipped, active in "Cold Emails - Auto 8-Bump Sequence": Jeff Morris, Rick DeLoach, Bernita McCully.
+  - Skipped, opted out: Mark Garton, Mark Wise.
+  - Error, already been in 1419 before (personal notes written): Paul Suarez, Wesley Bard.
+- Bug fixed: transform.py now strips nickname greetings ("Hey Wes -", "Hi Meer -").
+- Open: workflow gap (no check for past 1419 membership); John to decide on the 9 + 2 + 2 skipped/errored, 9 cards, 4 no-concept people, 2 held.
