@@ -4,6 +4,7 @@ Attio people fields the cpm-email skill reads.
 Usage:
   python3 load_lookup_doc.py DOC.txt            # dry run: prints what would be written
   python3 load_lookup_doc.py DOC.txt --apply    # writes, then reads back and compares
+  python3 load_lookup_doc.py --plan PLAN.json [--apply]   # load a reviewed JSON plan instead (other doc formats, judgment calls)
 
 Doc format (one block per person):
   First Last — Company (Title)
@@ -108,11 +109,16 @@ def find(p):
 
 
 def main():
-    text = open(sys.argv[1], encoding="utf-8").read()
     apply = "--apply" in sys.argv
+    if "--plan" in sys.argv:
+        # A reviewed JSON plan: [{"name","company","values":{...}}] — used when the doc format differs
+        # or a person needs a judgment call (e.g. "Undetermined" with a clear agenda/subject).
+        items = [(p, p["values"]) for p in json.load(open(sys.argv[sys.argv.index("--plan") + 1], encoding="utf-8"))]
+    else:
+        items = [(p, values(p)) for p in parse(open(sys.argv[1], encoding="utf-8").read())]
     out = []
-    for p in parse(text):
-        hits, v = find(p), values(p)
+    for p, v in items:
+        hits = find(p)
         row = {"name": p["name"], "company": p["company"], "record_ids": hits, "values": v}
         if len(hits) != 1: row["skipped"] = "not found" if not hits else "ambiguous"
         elif apply:

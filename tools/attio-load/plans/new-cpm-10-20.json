@@ -1,0 +1,193 @@
+[
+ {
+  "name": "Ron Palmer",
+  "company": "O'Reilly Auto Parts",
+  "values": {
+   "past_meeting_date": "2022-06-23",
+   "cpm_past_rep": null,
+   "cpm_obtained": "Obtained",
+   "cpm_concepts": "Access governance (from the May 2022 follow-up before the June meeting; the June meeting topic itself is not recorded – say the meeting was set up around it, do not claim it was discussed).\n[Source: Salesforce lookup doc \"NEW CPM - People 10 to 20\" (2026-11-20); confidence Medium]\nJudgment (John 2026-11-20): Undetermined in doc, but the earlier context names access governance – bet on it.",
+   "cpm_concept_tags": [
+    "Least Privilege & Permissions",
+    "Data Governance & Ownership"
+   ],
+   "cpm_evidence": "E1 – Email 2022-05-16 (Nathan Mathers), Varonis follow up - Whitepapers: \"what we do around access governance.\"\nE2 – Event 2022-06-23 NPM (owner Emily Wilson): description empty.",
+   "cpm_stall_reason": "Pending then silence",
+   "cpm_stall_quote": "Blockers (lookup): No substantive June recap recovered.",
+   "cpm_route": "Draft",
+   "cpm_not_obtained_reason": null
+  }
+ },
+ {
+  "name": "Chad Ripperger",
+  "company": "Wellmark",
+  "values": {
+   "past_meeting_date": "2026-01-15",
+   "cpm_past_rep": null,
+   "cpm_obtained": "Not obtained",
+   "cpm_concepts": null,
+   "cpm_concept_tags": [],
+   "cpm_evidence": "E1 – Email 2026-01-16 (Rob Andersen), Varonis // Wellmark: \"Thank you for joining James and I for lunch yesterday.\" A lab demonstration was proposed.",
+   "cpm_stall_reason": null,
+   "cpm_stall_quote": null,
+   "cpm_route": null,
+   "cpm_not_obtained_reason": "Lunch confirmed (2026-01-15, Mick Torrey/James), but no technical concept was mentioned anywhere."
+  }
+ },
+ {
+  "name": "Richard Berry",
+  "company": "Newfold Digital",
+  "values": {
+   "past_meeting_date": "2025-10-29",
+   "cpm_past_rep": "Patrick",
+   "cpm_obtained": "Obtained",
+   "cpm_concepts": "Data exposure / risk assessment: broadly accessible operational, credential, financial, PII and IP data; prioritizing remediation findings (team recap; Richard was on the invite, his own attendance not established).\n[Source: Salesforce lookup doc \"NEW CPM - People 10 to 20\" (2026-11-20); confidence Medium]\nNote: past rep Patrick is Patrick Regan, not Patrick Dolan. Keep claims at team level.",
+   "cpm_concept_tags": [
+    "Data Risk Assessment",
+    "Least Privilege & Permissions",
+    "Data Classification & Discovery"
+   ],
+   "cpm_evidence": "E1 – Team recap 2025-11-04 (Patrick Regan), Varonis Newfold Digital Wrap Up: \"open file paths containing operational, credential, financial, and IP-related data.\"\nE2 – Event 2025-10-29 wrap-up; Richard on the invitation.",
+   "cpm_stall_reason": "Pending then silence",
+   "cpm_stall_quote": "Blockers (lookup): Individual attendance not established.",
+   "cpm_route": "Draft",
+   "cpm_not_obtained_reason": null
+  }
+ },
+ {
+  "name": "Rhys Samson",
+  "company": "CSX",
+  "values": {
+   "past_meeting_date": "2018-08-07",
+   "cpm_past_rep": null,
+   "cpm_obtained": "Obtained",
+   "cpm_concepts": "Splunk integration (event subject only: \"Investigate interest in Varonis with SPlunk\"; say the meeting was set up around Varonis with Splunk, do not claim it was discussed).\n[Source: Salesforce lookup doc \"NEW CPM - People 10 to 20\" (2026-11-20); confidence Low-Medium]\nJudgment (John 2026-11-20): Undetermined in doc, but the subject names Splunk – bet on it.",
+   "cpm_concept_tags": [
+    "SIEM & SOC Integrations",
+    "Threat Detection & Response"
+   ],
+   "cpm_evidence": "E1 – Event 2018-08-07 (owner Michael Respert), subject: \"Investigate interest in Varonis with SPlunk\". Description empty.",
+   "cpm_stall_reason": "Unknown",
+   "cpm_stall_quote": "Blockers (lookup): No substantive recap recovered; completion unverified.",
+   "cpm_route": "Draft",
+   "cpm_not_obtained_reason": null
+  }
+ },
+ {
+  "name": "Rick Coro",
+  "company": "Landstar System",
+  "values": {
+   "past_meeting_date": "2020-07-21",
+   "cpm_past_rep": null,
+   "cpm_obtained": "Not obtained",
+   "cpm_concepts": null,
+   "cpm_concept_tags": [],
+   "cpm_evidence": "E1 – Event 2020-07-21 (owner David Jenkins), subject: \"NP Meeting w/ Landstar\". Description empty.",
+   "cpm_stall_reason": null,
+   "cpm_stall_quote": null,
+   "cpm_route": null,
+   "cpm_not_obtained_reason": "Event subject and description name no technical concept."
+  }
+ },
+ {
+  "name": "Ryan Baker",
+  "company": "VT Industries",
+  "values": {
+   "past_meeting_date": "2024-07-11",
+   "cpm_past_rep": "Tony",
+   "cpm_obtained": "Obtained",
+   "cpm_concepts": "Data risk assessment presentation and Hybrid SaaS evaluation (Ryan coordinated the team for the wrap-up).\n[Source: Salesforce lookup doc \"NEW CPM - People 10 to 20\" (2026-11-20); confidence Medium]",
+   "cpm_concept_tags": [
+    "Data Risk Assessment"
+   ],
+   "cpm_evidence": "E1 – Email 2024-07-11 (Tony Matteoni): \"thanks for coordinating the team for the wrap up meeting today.\"\nE2 – Email 2024-07-09 names Ryan and the planned data risk assessment presentation; same-day follow-up discusses Hybrid SaaS pricing.",
+   "cpm_stall_reason": "Pending then silence",
+   "cpm_stall_quote": "Blockers (lookup): Specific technical findings not recovered.",
+   "cpm_route": "Draft",
+   "cpm_not_obtained_reason": null
+  }
+ },
+ {
+  "name": "Ramakanth Pasunuri",
+  "company": "CSX",
+  "values": {
+   "past_meeting_date": "2026-05-05",
+   "cpm_past_rep": "John",
+   "cpm_obtained": "Obtained",
+   "cpm_concepts": "Microsoft Fabric: Oracle and M365 data ingested into Fabric; sensitive-data discovery and permissions/ACL visibility to reduce exposure before analytics and AI access; a DRA was proposed.\n[Source: Salesforce lookup doc \"NEW CPM - People 10 to 20\" (2026-11-20); confidence High]\nPast rep John is John Quijano (not John Callahan).",
+   "cpm_concept_tags": [
+    "Data Classification & Discovery",
+    "Least Privilege & Permissions",
+    "Microsoft 365",
+    "Database Security (DAM)",
+    "AI & Copilot Security",
+    "Data Risk Assessment"
+   ],
+   "cpm_evidence": "E1 – Recap 2026-05-05 (John Quijano), Varonis Data Security Platform - Data Risk Assessment: \"ingesting data from sources like Oracle databases and M365 into Microsoft Fabric.\"\nE2 – Follow-up 2026-05-08 rescheduled, not completed.",
+   "cpm_stall_reason": "Pending then silence",
+   "cpm_stall_quote": "Blockers (lookup): 8 May follow-up rescheduled; later completion not established.",
+   "cpm_route": "Draft",
+   "cpm_not_obtained_reason": null
+  }
+ },
+ {
+  "name": "Quentin Burgess",
+  "company": "State of Missouri",
+  "values": {
+   "past_meeting_date": "2023-12-15",
+   "cpm_past_rep": "Dane",
+   "cpm_obtained": "Obtained",
+   "cpm_concepts": "Data risk assessment (escalating internally); classification named in the event title.\n[Source: Salesforce lookup doc \"NEW CPM - People 10 to 20\" (2026-11-20); confidence Medium]",
+   "cpm_concept_tags": [
+    "Data Risk Assessment",
+    "Data Classification & Discovery"
+   ],
+   "cpm_evidence": "E1 – Email 2023-12-15 (Dane Horstmann), Risk Assessment Literature: \"helpful in pushing the data risk assessment up the ladder.\"\nE2 – Follow-up invitation 2024-01-12; attendance unconfirmed.",
+   "cpm_stall_reason": "Pending then silence",
+   "cpm_stall_quote": "Blockers (lookup): January meeting not confirmed.",
+   "cpm_route": "Draft",
+   "cpm_not_obtained_reason": null
+  }
+ },
+ {
+  "name": "Praveen Polu",
+  "company": "DRAKE UNIVERSITY",
+  "values": {
+   "past_meeting_date": "2023-05-30",
+   "cpm_past_rep": "Tony",
+   "cpm_obtained": "Obtained",
+   "cpm_concepts": "Agenda (invite 2023-05-30): permissions visibility, auditing, ransomware, sensitive/stale data and ownership – say the meeting was set up around visibility into permissions and sensitive data, do not claim it was discussed.\n[Source: Salesforce lookup doc \"NEW CPM - People 10 to 20\" (2026-11-20); confidence Medium]\nJudgment (John 2026-11-20): Undetermined in doc, but the agenda is clear – bet on it.",
+   "cpm_concept_tags": [
+    "Least Privilege & Permissions",
+    "Audit & Activity Monitoring",
+    "Data Classification & Discovery",
+    "Threat Detection & Response"
+   ],
+   "cpm_evidence": "E1 – Invite 2023-05-30: agenda lists permissions visibility, auditing, ransomware, sensitive/stale data and ownership.\nE2 – Email 2023-06-09 (Tony Matteoni), RE: Drake/Varonis - next steps: \"Praveen, I missed you on our call earlier today.\"",
+   "cpm_stall_reason": "Pending then silence",
+   "cpm_stall_quote": "Blockers (lookup): Next-steps call 2023-06-09 missed.",
+   "cpm_route": "Draft",
+   "cpm_not_obtained_reason": null
+  }
+ },
+ {
+  "name": "Pat Baldus",
+  "company": "Sammons Financial Group",
+  "values": {
+   "past_meeting_date": "2024-04-29",
+   "cpm_past_rep": "James",
+   "cpm_obtained": "Obtained",
+   "cpm_concepts": "Data ownership and stale PII cleanup reporting (team topics; Pat on CC).\n[Source: Salesforce lookup doc \"NEW CPM - People 10 to 20\" (2026-11-20); confidence Medium]\nNote: Sammons is an out-of-contract customer (John); keep it at team level.",
+   "cpm_concept_tags": [
+    "Data Governance & Ownership",
+    "Data Classification & Discovery",
+    "Audit & Activity Monitoring"
+   ],
+   "cpm_evidence": "E1 – Thread 2024-05-01 (James Thielman / Lerrin Stahnke; quoted Shauna Wright), RE: Varonis Follow up question: \"Is the owner of the document/report or the last person to update the document/report something that could be included on the Varonis summaries?\"\nE2 – Reports meeting 2024-04-29; Pat on CC.",
+   "cpm_stall_reason": "Unknown",
+   "cpm_stall_quote": "Blockers (lookup): Pat's personal comments and attendance not established.",
+   "cpm_route": "Draft",
+   "cpm_not_obtained_reason": null
+  }
+ }
+]

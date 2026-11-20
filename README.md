@@ -43,4 +43,7 @@ Reads only Email Drafts with stage Approved and kind Email. Cleans them mechanic
 ## Loading new people from a Salesforce lookup doc
 1. John puts a "Past Meeting Lookup" doc (format: `Name — Company (Title)`, then Last meeting / Concept / Evidence / Blockers / Confidence) in the Past Meetings Skills Drive folder.
 2. Export it as text/plain and run `python3 tools/attio-load/load_lookup_doc.py DOC.txt` (dry run), then with `--apply` (writes, then reads back).
+2b. If the doc has another format, or says "Undetermined" where an agenda, subject or earlier email names a concept, write a reviewed JSON plan in `tools/attio-load/plans/` and load it with `--plan PLAN.json [--apply]`. Rule: one technical concept named anywhere (agenda, subject, earlier email) = Obtained, and the email says the meeting was set up around it; no concept anywhere = Not obtained.
 3. Run the cpm-email skill with `cpm_read.py people --ids ID,ID,...`. A meeting in the last 180 days removes the person automatically.
+
+Attio view "CPM – Drafted today" (Email Drafts, table): drafts with `drafted_at` today, sorted by `stage` (Drafted, Reviewed, Approved, Pushed, Failed, Needs John).
