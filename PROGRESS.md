@@ -26,5 +26,5 @@ Open
 Next
 - outreach-push skill built (sequence 1419, greeting/sign-off stripped by script).
 - 2026-11-20: push path fixed. Cause: the workflow's manual trigger was paused (connector ERROR_BAD_REQUEST, API "Trigger not found"). Trigger set to live (no paused runs resumed). Verified: connector run wfr_0tot7y3YzYAyPFBjAkP on the published snapshot, fake email → skip "Not found in Outreach". Skill now reads the decision via get-task-context; skip → Failed.
-- Next: John's end-to-end test with Nahuel v2 (a4322dde…, Reviewed). John approves → status Approved → "send" → push → check Outreach.
+- 2026-11-20: first live push done. Nahuel v2 → Approved (chat) → Clay run wfr_0tot86k2MWnKw2T8pDo, all steps completed, decision ok → Outreach prospect 1046615, sequence 1419 → draft Pushed. Waiting for John to check it in Outreach.
 - Run the skill on 3 people with a separate reviewer, then the full batch (32 drafts + 9 cards).
