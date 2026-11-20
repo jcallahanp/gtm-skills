@@ -20,7 +20,7 @@ description: Use when John says to push, send or load approved CPM emails into O
 
 ## Steps
 
-1. `python3 ${CLAUDE_SKILL_DIR}/scripts/push_prepare.py > payloads.json` (or pass specific draft IDs).
+1. `python3 ${CLAUDE_SKILL_DIR}/scripts/push_prepare.py --exclude ${CLAUDE_PLUGIN_ROOT}/../../excludes/cpm-first-run.json > payloads.json` (while `excludes/cpm-first-run.json` exists in the repo, always pass it) (or pass specific draft IDs).
 2. Show John, for each ready draft: name, recipient, subject and the cleaned body. List every problem. Ask for a yes.
 3. On yes, for each ready draft:
    1. Call the Clay MCP tool `run_subroutine_direct` with `subroutine_id` `workflow:wf_0tmyifbTzDS2gDK6xdo` ("Email Send Workflow") and `inputs` = `[clay_inputs]`.

@@ -14,6 +14,9 @@ Done
 
 - Old Attio Writing Rules renamed ARCHIVED; past_meeting_context, past_meeting_summary, meeting_context archived; old attio-* skills removed from claude.ai by John.
 
+- TEMP excludes for the first run: excludes/cpm-first-run.json (Attio record ids of exact name matches from John's Orum list: 2 people). Rule: names only, exact match only; near matches go to John (Brent Nelson vs Brian Nelson: not excluded). Call notes are never used. Delete the file and the --exclude flags after Attio hygiene.
+- First test drafts in Attio (Reviewed): Brian Nelson, Nahuel Chinchilla, Rick DeLoach. Waiting for John to set one to Approved for a single live push.
+
 Open
 - 11 companies have no rep in Attio (no combined parent record with a rep either) → emails name no rep.
 - 2 disputed stall reasons written as Unknown (Jeff Morris, Phillip Graves).

@@ -18,7 +18,7 @@ Everything this skill knows comes from Attio, read ONLY through the scripts in `
 ## Steps
 
 1. `python3 ${CLAUDE_SKILL_DIR}/scripts/cpm_read.py rules > rules.json` – read it fully before writing anything.
-2. `python3 ${CLAUDE_SKILL_DIR}/scripts/cpm_read.py people --only-pending > people.json` (no flag = everyone; or pick the person John named).
+2. `python3 ${CLAUDE_SKILL_DIR}/scripts/cpm_read.py people --only-pending --exclude ${CLAUDE_PLUGIN_ROOT}/../../excludes/cpm-first-run.json > people.json` (while `excludes/cpm-first-run.json` exists in the repo, always pass it) (no flag = everyone; or pick the person John named).
 3. `python3 ${CLAUDE_SKILL_DIR}/scripts/cpm_read.py updates > updates.json`
 4. For each person with `cpm_obtained` = "Obtained":
    1. `python3 ${CLAUDE_SKILL_DIR}/scripts/cpm_match.py people.json updates.json PERSON_RECORD_ID` → candidate updates.

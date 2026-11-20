@@ -5,6 +5,7 @@ Usage:
   python3 cpm_read.py rules                     -> Writing Rules record "CPM email" (rules + examples)
   python3 cpm_read.py drafts                    -> all CPM Email Drafts (newest first)
 --only-pending keeps people with no live draft (none, or only Superseded/Failed).
+--exclude FILE drops every person whose Attio record id is in FILE ("attio_person_record_ids").
 """
 import datetime, json, sys
 from attio import call, flat, project, PERSON_READ, COMPANY_READ, UPDATE_READ, DRAFT_READ, REPS
@@ -58,6 +59,7 @@ def people(only_pending):
         d = live.get(p["record_id"])
         p["latest_draft_id"], p["latest_draft_status"] = (d["record_id"], d["status"]) if d else (None, None)
         if only_pending and p["latest_draft_status"] not in (None, "Failed"): continue
+        if p["record_id"] in EXCLUDE: continue
         out.append(p)
     return out
 
@@ -73,6 +75,10 @@ def rules():
     if not recs: raise SystemExit("Writing Rules record 'CPM email' not found.")
     return {"rules": flat(recs[0]["values"], "rules"), "examples": flat(recs[0]["values"], "examples")}
 
+
+EXCLUDE = set()
+if "--exclude" in sys.argv:
+    EXCLUDE = set(json.load(open(sys.argv[sys.argv.index("--exclude") + 1]))["attio_person_record_ids"])
 
 if __name__ == "__main__":
     cmd = sys.argv[1]
