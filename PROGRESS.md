@@ -46,3 +46,5 @@ John: "draft them out for all the eligible past meetings and then approve and pu
   - Error, already been in 1419 before (personal notes written): Paul Suarez, Wesley Bard.
 - Bug fixed: transform.py now strips nickname greetings ("Hey Wes -", "Hi Meer -").
 - Open: workflow gap (no check for past 1419 membership); John to decide on the 9 + 2 + 2 skipped/errored, 9 cards, 4 no-concept people, 2 held.
+- Rewrites round 2: Phillip Graves and Scott Edmonston pushed (1419, states 277768/277769); Philip Tyson skipped (active in "Email Only"); Samuel Wolf failed review twice → John.
+- Totals: 8 added to 1419 (plus Nahuel earlier = 9). 14 approved emails not added (10 active elsewhere, 2 opted out, 2 already in 1419 before).
