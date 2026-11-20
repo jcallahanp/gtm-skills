@@ -20,8 +20,11 @@ Done
 Open
 - 11 companies have no rep in Attio (no combined parent record with a rep either) → emails name no rep.
 - 2 disputed stall reasons written as Unknown (Jeff Morris, Phillip Graves).
+- Drive run book is now "HOW TO RUN (v3)" (Attio + two skills); v2 SUPERSEDED.
 - Where the skill runs: local Claude Code plugin, or upload to claude.ai skills for cloud/Cowork.
 
 Next
-- outreach-push skill built (sequence 1419, greeting/sign-off stripped by script). Not yet run against Clay: first live push needs John's yes.
+- outreach-push skill built (sequence 1419, greeting/sign-off stripped by script).
+- 2026-11-20: push path fixed. Cause: the workflow's manual trigger was paused (connector ERROR_BAD_REQUEST, API "Trigger not found"). Trigger set to live (no paused runs resumed). Verified: connector run wfr_0tot7y3YzYAyPFBjAkP on the published snapshot, fake email → skip "Not found in Outreach". Skill now reads the decision via get-task-context; skip → Failed.
+- Next: John's end-to-end test with Nahuel v2 (a4322dde…, Reviewed). John approves → status Approved → "send" → push → check Outreach.
 - Run the skill on 3 people with a separate reviewer, then the full batch (32 drafts + 9 cards).

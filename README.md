@@ -38,4 +38,4 @@ Some old company records were merged into combined records (subsidiaries, rename
 
 ## outreach-push
 
-Reads only Email Drafts with status Approved and kind Email. Cleans them mechanically (removes the greeting to the person and any sign-off, because sequence 1419 adds "Hi {first name}," and the signature), builds the `<p>` HTML, and starts Clay "Daily Queue - API" (sequence 1419) one draft at a time. Writes only status (Pushed/Failed), `pushed_at`, `push_result` on the draft. Dry run first, push only on John's yes.
+Reads only Email Drafts with status Approved and kind Email. Cleans them mechanically (removes the greeting to the person and any sign-off, because sequence 1419 adds "Hi {first name}," and the signature), builds the `<p>` HTML, and starts Clay "Email Send Workflow" (`wf_0tmyifbTzDS2gDK6xdo`, sequence 1419) through the Clay connector, one draft at a time, and reads the workflow decision. Writes only status (Pushed/Failed), `pushed_at`, `push_result` on the draft. John approves drafts by name in chat; "send those" is standing approval to push all of them. The workflow's manual trigger must be live (see the skill's Needs).
