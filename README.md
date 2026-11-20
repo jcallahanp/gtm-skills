@@ -47,3 +47,7 @@ Reads only Email Drafts with stage Approved and kind Email. Cleans them mechanic
 3. Run the cpm-email skill with `cpm_read.py people --ids ID,ID,...`. A meeting in the last 180 days removes the person automatically.
 
 Attio view "CPM – Drafted today" (Email Drafts, table): drafts with `drafted_at` today, sorted by `stage` (Drafted, Reviewed, Approved, Pushed, Failed, Needs John).
+
+## Results ledger (immutable record)
+- Live source: Attio Email Drafts (`stage`, `push_result`, `review_notes`) and the people `cpm_*` fields.
+- Snapshot: `python3 tools/report/cpm_ledger.py OUT_DIR` writes a CSV (one row per person: Emailed / Failed + reason / Needs John / In progress / No draft + reason) and a summary. It contains prospect data, so it never goes in git: upload both to the Drive folder "Past Meetings Skills" and lock them read-only. Run it after every batch.

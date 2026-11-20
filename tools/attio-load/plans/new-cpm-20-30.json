@@ -1,0 +1,187 @@
+[
+ {
+  "name": "Owen Fuller",
+  "company": "Casey's",
+  "values": {
+   "past_meeting_date": "2025-08-18",
+   "cpm_past_rep": null,
+   "cpm_obtained": "Obtained",
+   "cpm_concepts": "AI governance: sharing-risk reporting and Copilot prompt privacy (slides for their AI steering committee).\n[Source: Salesforce lookup doc \"NEW CPM 20 - 30\" (2026-11-20); confidence High]",
+   "cpm_concept_tags": [
+    "AI & Copilot Security",
+    "Least Privilege & Permissions",
+    "Microsoft 365",
+    "Data Governance & Ownership"
+   ],
+   "cpm_evidence": "E1 – Follow-up 2025-08-18: confirms slide selection for the AI steering committee.\nE2 – Customer questions 2025-08-20: \"There is a concern over admins being able to see the C Suite's Copilot prompts and results.\"",
+   "cpm_stall_reason": "Pending then silence",
+   "cpm_stall_quote": "Blockers (lookup): Follow-up topics confirmed; not all necessarily spoken on the 18 Aug call.",
+   "cpm_route": "Draft",
+   "cpm_not_obtained_reason": null
+  }
+ },
+ {
+  "name": "Omar Gomez",
+  "company": "Electrical Components International",
+  "values": {
+   "past_meeting_date": "2026-06-15",
+   "cpm_past_rep": null,
+   "cpm_obtained": "Not obtained",
+   "cpm_concepts": null,
+   "cpm_concept_tags": [],
+   "cpm_evidence": "E1 – Thank-you email 2026-06-17: \"Thanks again for taking a few minutes to chat with Adam and I on Monday!\" Mentions only slides and internal discussion.",
+   "cpm_stall_reason": null,
+   "cpm_stall_quote": null,
+   "cpm_route": null,
+   "cpm_not_obtained_reason": "Intro meeting 2026-06-15 (recent); no technical topic recorded."
+  }
+ },
+ {
+  "name": "Nick Barber",
+  "company": "Casey's",
+  "values": {
+   "past_meeting_date": "2025-08-06",
+   "cpm_past_rep": null,
+   "cpm_obtained": "Obtained",
+   "cpm_concepts": "Microsoft 365 sharing-link visibility and Active Directory integration (meeting-level topic from an additional review; Nick was on the invite CC – keep it at team level, name the systems broadly, no troubleshooting steps).\n[Source: Salesforce lookup doc \"NEW CPM 20 - 30\" (2026-11-20); confidence Medium]",
+   "cpm_concept_tags": [
+    "Microsoft 365",
+    "Identity & Active Directory",
+    "Least Privilege & Permissions"
+   ],
+   "cpm_evidence": "E1 – Recap 2025-08-06 (logged under Owen Fuller): \"I’m attaching the PDF with the instructions for checking the Microsoft API responses for sharing link metadata\"; also resetting AD integration and tenant access.\nE2 – Original invite: Nick on CC.",
+   "cpm_stall_reason": "Unknown",
+   "cpm_stall_quote": "Blockers (lookup): Attendance not established.",
+   "cpm_route": "Draft",
+   "cpm_not_obtained_reason": null
+  }
+ },
+ {
+  "name": "Nedra Vaughan",
+  "company": "Emerson",
+  "values": {
+   "past_meeting_date": "2025-09-09",
+   "cpm_past_rep": null,
+   "cpm_obtained": "Obtained",
+   "cpm_concepts": "Varonis SaaS risk assessment setup at Emerson (team-level; Nedra copied). The thread is install detail (TLS, firewall, Okta SSO, credentials) – never mention those; name it broadly as the SaaS assessment.\n[Source: Salesforce lookup doc \"NEW CPM 20 - 30\" (2026-11-20); confidence Medium]",
+   "cpm_concept_tags": [
+    "Data Risk Assessment"
+   ],
+   "cpm_evidence": "E1 – Server-prep invite 2025-09-09.\nE2 – Customer email (thread 2025-09-17/22): \"Good news on the TLS errors, exceptions have been made in our SSL Decryption.\" Nedra copied.\nE3 – 2025-09-30 reply permits 1 October installation.",
+   "cpm_stall_reason": "Pending then silence",
+   "cpm_stall_quote": "Blockers (lookup): Install rescheduled; outcome after 1 Oct not recorded.",
+   "cpm_route": "Draft",
+   "cpm_not_obtained_reason": null
+  }
+ },
+ {
+  "name": "Mary Pierson",
+  "company": "Sammons Financial Group",
+  "values": {
+   "past_meeting_date": "2024-12-10",
+   "cpm_past_rep": null,
+   "cpm_obtained": "Obtained",
+   "cpm_concepts": "Agenda only (invite 2024-12-10): current and future state of Varonis at SFG; DSPM/CSPM – say the time was set up around it, do not claim it was discussed. Sammons is an out-of-contract customer (John).\n[Source: Salesforce lookup doc \"NEW CPM 20 - 30\" (2026-11-20); confidence Medium]\nJudgment (John 2026-11-20): Undetermined in doc, agenda names DSPM/CSPM – bet on it.",
+   "cpm_concept_tags": [
+    "DSPM",
+    "Cloud & IaaS"
+   ],
+   "cpm_evidence": "E1 – Replacement invite 2024-12-10: \"For this one we're going to focus on current and future-state of Varonis at SFG.\" Agenda: DSPM/CSPM.",
+   "cpm_stall_reason": "Unknown",
+   "cpm_stall_quote": "Blockers (lookup): Agenda only; completion not established.",
+   "cpm_route": "Draft",
+   "cpm_not_obtained_reason": null
+  }
+ },
+ {
+  "name": "Mike Jackson",
+  "company": "Casey's",
+  "values": {
+   "past_meeting_date": "2017-08-09",
+   "cpm_past_rep": null,
+   "cpm_obtained": "Not obtained",
+   "cpm_concepts": null,
+   "cpm_concept_tags": [],
+   "cpm_evidence": "E1 – Casey's event 2017-08-09 (contact-linked invite). No topic.",
+   "cpm_stall_reason": null,
+   "cpm_stall_quote": null,
+   "cpm_route": null,
+   "cpm_not_obtained_reason": "Invite only, no technical concept. Identity resolved to the Casey's Past Meeting record in Attio."
+  }
+ },
+ {
+  "name": "Mike Broders",
+  "company": "Iowa State",
+  "values": {
+   "past_meeting_date": "2024-03-27",
+   "cpm_past_rep": null,
+   "cpm_obtained": "Obtained",
+   "cpm_concepts": "Data risk assessment results review and operational plan (at Corteva).\n[Source: Salesforce lookup doc \"NEW CPM 20 - 30\" (2026-11-20); confidence Medium]\nHOLD: the meeting was at Corteva, but Attio now lists him at Iowa State University. John decides whether and how to email.",
+   "cpm_concept_tags": [
+    "Data Risk Assessment",
+    "Microsoft Purview"
+   ],
+   "cpm_evidence": "E1 – Mike's reply 2024-04-01: \"Thanks again for taking the time to go over the results with us last week.\"\nE2 – Follow-up 2024-04-09: customized operational plan; cleanup after the evaluation license expired.",
+   "cpm_stall_reason": "Pending then silence",
+   "cpm_stall_quote": "Blockers (lookup): Evaluation license expired; no later activity.",
+   "cpm_route": "Needs John",
+   "cpm_not_obtained_reason": null
+  }
+ },
+ {
+  "name": "Michael Hartman",
+  "company": "Ruan",
+  "values": {
+   "past_meeting_date": "2024-10-10",
+   "cpm_past_rep": null,
+   "cpm_obtained": "Obtained",
+   "cpm_concepts": "Older (2022) assessment correspondence only; the latest invite (2024-10-10) is a touchpoint placeholder with no agenda.\n[Source: Salesforce lookup doc \"NEW CPM 20 - 30\" (2026-11-20); confidence Low]\nLow confidence → John decides.",
+   "cpm_concept_tags": [
+    "Data Risk Assessment"
+   ],
+   "cpm_evidence": "E1 – Event 2024-10-10: touchpoint placeholder, no technical agenda.\nE2 – Older 2022 assessment correspondence (not quoted in the lookup).",
+   "cpm_stall_reason": "Unknown",
+   "cpm_stall_quote": "Blockers (lookup): Placeholder does not establish completion.",
+   "cpm_route": "Needs John",
+   "cpm_not_obtained_reason": null
+  }
+ },
+ {
+  "name": "Matt Raines",
+  "company": "Drury Hotels",
+  "values": {
+   "past_meeting_date": "2026-04-07",
+   "cpm_past_rep": null,
+   "cpm_obtained": "Obtained",
+   "cpm_concepts": "Database Activity Monitoring (DAM) and platform updates.\n[Source: Salesforce lookup doc \"NEW CPM 20 - 30\" (2026-11-20); confidence Medium-High]",
+   "cpm_concept_tags": [
+    "Database Security (DAM)",
+    "Audit & Activity Monitoring"
+   ],
+   "cpm_evidence": "E1 – Thank-you email 2026-04-07: \"More details are below on our Database Activity Monitoring (DAM) capabilities.\"",
+   "cpm_stall_reason": "Pending then silence",
+   "cpm_stall_quote": "Blockers (lookup): No later activity recorded.",
+   "cpm_route": "Draft",
+   "cpm_not_obtained_reason": null
+  }
+ },
+ {
+  "name": "Mary Heinrich",
+  "company": "FIS",
+  "values": {
+   "past_meeting_date": "2024-09-09",
+   "cpm_past_rep": null,
+   "cpm_obtained": "Obtained",
+   "cpm_concepts": "Invite title only: \"Varonis Data Discovery & Privacy Discussion - FIS\" – say the time was set up around data discovery and privacy, do not claim it was discussed.\n[Source: Salesforce lookup doc \"NEW CPM 20 - 30\" (2026-11-20); confidence Medium]\nJudgment (John 2026-11-20): Undetermined in doc, title names data discovery and privacy – bet on it.",
+   "cpm_concept_tags": [
+    "Data Classification & Discovery",
+    "Compliance & Privacy"
+   ],
+   "cpm_evidence": "E1 – Invite 2024-09-09: \"Varonis Data Discovery & Privacy Discussion - FIS\".",
+   "cpm_stall_reason": "Unknown",
+   "cpm_stall_quote": "Blockers (lookup): Invite title only; completion not established.",
+   "cpm_route": "Draft",
+   "cpm_not_obtained_reason": null
+  }
+ }
+]

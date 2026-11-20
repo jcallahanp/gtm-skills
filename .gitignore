@@ -3,3 +3,4 @@ plan.json
 *.xlsx
 __pycache__/
 .env
+results/
