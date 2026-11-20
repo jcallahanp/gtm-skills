@@ -4,9 +4,11 @@
  "attio_person_record_ids": [
   "8e16dd5f-e3b7-4e31-9c24-3bd641b2253d",
   "0e8d9a16-e538-41ba-b338-7a5b6191afa7",
-  "8765715d-d2d9-45ac-a877-915222c16b55"
+  "8765715d-d2d9-45ac-a877-915222c16b55",
+  "6fb7f9af-da2e-47e9-9f71-43878089bd77"
  ],
  "notes": {
-  "8765715d-d2d9-45ac-a877-915222c16b55": "Craig Galley (JEA): Todd is talking to him; do not draft or push."
+  "8765715d-d2d9-45ac-a877-915222c16b55": "Craig Galley (JEA): Todd is talking to him; do not draft or push.",
+  "6fb7f9af-da2e-47e9-9f71-43878089bd77": "Scott Steenhoek (Sammons): John thinks data is wrong; John checking. Do not draft."
  }
 }

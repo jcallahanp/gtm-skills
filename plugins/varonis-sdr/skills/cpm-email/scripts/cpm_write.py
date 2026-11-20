@@ -12,7 +12,7 @@ from cpm_read import drafts, latest_by_person
 a = argparse.ArgumentParser()
 a.add_argument("person"); a.add_argument("name"); a.add_argument("kind", choices=["email", "card"])
 a.add_argument("subject"); a.add_argument("file")
-a.add_argument("--updates", nargs="*", default=[]); a.add_argument("--rules-version", default="v8")
+a.add_argument("--updates", nargs="*", default=[]); a.add_argument("--rules-version", default="v10")
 a.add_argument("--replace-approved", action="store_true")
 x = a.parse_args()
 body = open(x.file).read().strip()

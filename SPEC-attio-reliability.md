@@ -1,6 +1,6 @@
 # SPEC – Attio data reliability + loop-you-in pilot
 
-Status: approved by John 2026-11-20. Rule changes 1–7 and 9 applied (rules v9). Rule 8 (loop-you-in) waits for this inventory.
+Status: CLOSED 2026-11-20. Inventory done (docs/attio-reliability-2026-11-20.md): Attio meeting data is stale or wrong, and John cannot connect Attio to company email/calendar. Decision: never use Attio meeting fields (rules v10). Loop-you-in only when John names a very recent meeting.
 
 ## Goal
 1. Measure how reliable and current each Attio field is that could tell us "who at this company met with us recently, when, and about what".

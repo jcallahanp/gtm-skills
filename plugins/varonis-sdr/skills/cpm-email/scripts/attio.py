@@ -15,7 +15,7 @@ DRAFT_READ = ["name", "person", "campaign", "kind", "subject", "body", "updates_
 DRAFT_CREATE = ["name", "person", "campaign", "kind", "subject", "body", "body_html", "updates_used", "rules_version",
                 "stage", "drafted_at", "supersedes"]
 DRAFT_UPDATE = ["stage", "review_notes"]
-AGENT_STATUSES = {"Drafted", "Reviewed", "Superseded"}  # Approved = John; Pushed/Failed = push skill
+AGENT_STATUSES = {"Drafted", "Reviewed", "Superseded", "Needs John"}  # Approved = John; Pushed/Failed = push skill
 REPS = {"Todd Cencich", "Rob Andersen", "Patrick Dolan"}
 
 

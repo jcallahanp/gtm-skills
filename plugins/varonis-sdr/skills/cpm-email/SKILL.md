@@ -12,7 +12,7 @@ Everything this skill knows comes from Attio, read ONLY through the scripts in `
 1. Read data only with `scripts/cpm_read.py`. It returns only allow-listed fields. If a fact is not in its output, it is unknown. Never use memory, the web or other Attio fields.
 2. Write only Email Draft records, only with `scripts/cpm_write.py` (new draft) and `scripts/cpm_review.py` (review result). A draft's text is never edited: a correction is a new draft and the old one becomes Superseded.
 3. This skill may set stage Drafted, Reviewed or Superseded only. Approved is John's. Pushed/Failed belong to the push skill. If a person's latest draft is Approved or Pushed, stop and ask John.
-4. Card or email is decided by rules section 0.3 (v9), not by `cpm_route` alone: a card (kind `card`) only when there is no topic at all; recurring pattern, support cases and install details get an email; inactive email gets nothing. Do not use company meeting history (loop-you-in) until SPEC-attio-reliability.md confirms the data.
+4. Card or email is decided by rules section 0.3 (v9), not by `cpm_route` alone: a card (kind `card`) only when there is no topic at all; recurring pattern, support cases and install details get an email; inactive email gets nothing. Never use Attio meeting fields to find other company meetings (rules v10); loop-you-in only when John names a recent meeting.
 5. A different agent reviews each draft. The writer never reviews its own work.
 
 ## Steps
