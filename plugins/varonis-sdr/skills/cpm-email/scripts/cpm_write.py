@@ -20,8 +20,8 @@ all_drafts = drafts()
 mine = [d for d in all_drafts if d["person"] == x.person]
 live = latest_by_person(mine).get(x.person)
 if live:
-    if live["status"] == "Pushed": raise SystemExit("Latest draft was already pushed. Not replacing.")
-    if live["status"] == "Approved" and not x.replace_approved: raise SystemExit("Latest draft is Approved. Ask John; rerun with --replace-approved only if he says so.")
+    if live["stage"] == "Pushed": raise SystemExit("Latest draft was already pushed. Not replacing.")
+    if live["stage"] == "Approved" and not x.replace_approved: raise SystemExit("Latest draft is Approved. Ask John; rerun with --replace-approved only if he says so.")
 today = datetime.date.today().isoformat()
 
 
@@ -37,11 +37,11 @@ values = {
     "subject": x.subject, "body": body,
     "body_html": to_html(paras),
     "updates_used": [{"target_object": "varonis_updates", "target_record_id": u} for u in x.updates],
-    "rules_version": x.rules_version, "status": "Drafted", "drafted_at": today,
+    "rules_version": x.rules_version, "stage": "Drafted", "drafted_at": today,
 }
 if live: values["supersedes"] = [{"target_object": "email_drafts", "target_record_id": live["record_id"]}]
 assert set(values) <= set(DRAFT_CREATE)
 new = call("POST", "/objects/email_drafts/records", {"data": {"values": values}})["data"]["id"]["record_id"]
 if live:
-    call("PATCH", f"/objects/email_drafts/records/{live['record_id']}", {"data": {"values": {"status": "Superseded"}}})
+    call("PATCH", f"/objects/email_drafts/records/{live['record_id']}", {"data": {"values": {"stage": "Superseded"}}})
 print(json.dumps({"created": new, "superseded": live["record_id"] if live else None, "name": values["name"]}))

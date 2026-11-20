@@ -11,7 +11,7 @@ EXCLUDE = set()
 if "--exclude" in args:
     i = args.index("--exclude"); EXCLUDE = set(json.load(open(args[i + 1]))["attio_person_record_ids"]); del args[i:i + 2]
 ids = args
-recs = call("POST", "/objects/email_drafts/records/query", {"filter": {"$and": [{"status": "Approved"}, {"kind": "Email"}]}, "limit": 500})["data"]
+recs = call("POST", "/objects/email_drafts/records/query", {"filter": {"$and": [{"stage": "Approved"}, {"kind": "Email"}]}, "limit": 500})["data"]
 out, problems = [], []
 for r in recs:
     d = project(r, DRAFT_READ)

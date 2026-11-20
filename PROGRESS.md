@@ -53,3 +53,9 @@ John: "draft them out for all the eligible past meetings and then approve and pu
 - Retry 2 (clay task mcp-task_0tota3yvZqZSTgxESQK): added Darin Gottman, Chris Gervich, Hermann Kelley, Kong Tran, Steve Hickle, Sam Kolars. Philip Tyson still active in "Email Only".
 - Totals now: 18 in 1419 (incl. Nahuel).
 - Craig Galley: two Attio records merged into the JEA one (new id 8765715d…; COJ record merged in). Added to excludes: Todd is talking to him, never push.
+
+## 2026-11-20 later
+- Disqualified in Attio (inactive email): Tim Anderson, Clayton Langston.
+- Email Drafts: new status-type field `stage` (values copied 44/44), old select `status` archived; all scripts use `stage`. Kanban view "Email Drafts – Kanban" (id f1312ab6…), hides Superseded.
+- cpm_read --only-pending now means "no draft at all" (a Failed push is no longer redrafted).
+- Next: SPEC-attio-reliability.md (loop-you-in pilot + Attio data inventory) and rule changes from John's 2026-11-20 examples (Robert, Brian Peck, Brian/Scott, Kevin).

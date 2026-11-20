@@ -11,7 +11,7 @@ Everything this skill knows comes from Attio, read ONLY through the scripts in `
 
 1. Read data only with `scripts/cpm_read.py`. It returns only allow-listed fields. If a fact is not in its output, it is unknown. Never use memory, the web or other Attio fields.
 2. Write only Email Draft records, only with `scripts/cpm_write.py` (new draft) and `scripts/cpm_review.py` (review result). A draft's text is never edited: a correction is a new draft and the old one becomes Superseded.
-3. This skill may set status Drafted, Reviewed or Superseded only. Approved is John's. Pushed/Failed belong to the push skill. If a person's latest draft is Approved or Pushed, stop and ask John.
+3. This skill may set stage Drafted, Reviewed or Superseded only. Approved is John's. Pushed/Failed belong to the push skill. If a person's latest draft is Approved or Pushed, stop and ask John.
 4. `cpm_route` = "Needs John" → write the card from the rules (kind `card`), not an email.
 5. A different agent reviews each draft. The writer never reviews its own work.
 

@@ -39,7 +39,7 @@ def drafts():
 def latest_by_person(rows):
     out = {}
     for d in rows:  # newest first
-        if d["status"] == "Superseded": continue
+        if d["stage"] == "Superseded": continue
         out.setdefault(d["person"], d)
     return out
 
@@ -57,8 +57,8 @@ def people(only_pending):
         p["company_name"] = companies.get(cid, {}).get("name")
         p["account_rep"] = companies.get(cid, {}).get("account_rep")
         d = live.get(p["record_id"])
-        p["latest_draft_id"], p["latest_draft_status"] = (d["record_id"], d["status"]) if d else (None, None)
-        if only_pending and p["latest_draft_status"] not in (None, "Failed"): continue
+        p["latest_draft_id"], p["latest_draft_status"] = (d["record_id"], d["stage"]) if d else (None, None)
+        if only_pending and p["latest_draft_status"] is not None: continue
         if p["record_id"] in EXCLUDE: continue
         out.append(p)
     return out

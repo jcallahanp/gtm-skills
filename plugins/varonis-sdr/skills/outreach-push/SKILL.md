@@ -7,7 +7,7 @@ description: Use when John says to push, send or load approved CPM emails into O
 
 ## Guardrails
 
-1. Only drafts with status **Approved** and kind **Email**. Never Drafted, Reviewed, cards, or anything already Pushed.
+1. Only drafts with stage **Approved** (John may also approve by dragging a card to Approved in the "Email Drafts – Kanban" view) and kind **Email**. Never Drafted, Reviewed, cards, or anything already Pushed.
 2. Never rewrite the email. The only changes are the mechanical ones in `scripts/transform.py`:
    - remove the greeting addressed to the person ("Hey Darin - ", "Steve - ", a "Hey Josh," line), because Outreach 1419 adds "Hi {first name},";
    - capitalize the new first letter;
@@ -15,7 +15,7 @@ description: Use when John says to push, send or load approved CPM emails into O
    - build the HTML: one `<p>` per paragraph, `<p><br></p>` between paragraphs.
    If the script reports a problem for a draft, skip that draft and tell John.
 3. Pass `clay_inputs` to Clay exactly as the script printed them. Do not edit any value.
-4. Approval is John's, given in chat. When John names drafts as approved, run `python3 ${CLAUDE_SKILL_DIR}/scripts/push_approve.py DRAFT_ID ...` (only Reviewed/Drafted Email drafts change; it writes status only). When John says "send those" / "send them", that is standing approval for every draft he approved: run the push for all of them with no more questions. Show the dry run (step 2) as information, not as a question. If a draft fails a guardrail, skip it and report it.
+4. Approval is John's, given in chat. When John names drafts as approved, run `python3 ${CLAUDE_SKILL_DIR}/scripts/push_approve.py DRAFT_ID ...` (only Reviewed, Drafted or Failed (retry) Email drafts change; it writes stage only). When John says "send those" / "send them", that is standing approval for every draft he approved: run the push for all of them with no more questions. Show the dry run (step 2) as information, not as a question. If a draft fails a guardrail, skip it and report it.
 5. One draft per Clay workflow run. Several drafts may go in one `run_subroutine_direct` call (one input object each; Clay starts one run per input); match each result back to its draft by `email`. Record every result in Attio, so a rerun never pushes twice.
 
 ## Steps

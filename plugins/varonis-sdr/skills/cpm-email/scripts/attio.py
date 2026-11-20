@@ -9,12 +9,12 @@ PERSON_READ = ["name", "email_addresses", "job_title", "salesforce_title", "comp
                "cpm_concept_tags", "cpm_evidence", "cpm_past_rep", "cpm_stall_reason", "cpm_stall_quote"]
 COMPANY_READ = ["name", "account_rep"]
 UPDATE_READ = ["name", "released_5", "what_it_adds", "concept_tags", "use_case", "quote", "source", "verification"]
-DRAFT_READ = ["name", "person", "campaign", "kind", "subject", "body", "updates_used", "rules_version", "status",
+DRAFT_READ = ["name", "person", "campaign", "kind", "subject", "body", "updates_used", "rules_version", "stage",
               "drafted_at", "review_notes", "supersedes"]
 # The ONLY object this skill writes is Email Drafts, and only these fields.
 DRAFT_CREATE = ["name", "person", "campaign", "kind", "subject", "body", "body_html", "updates_used", "rules_version",
-                "status", "drafted_at", "supersedes"]
-DRAFT_UPDATE = ["status", "review_notes"]
+                "stage", "drafted_at", "supersedes"]
+DRAFT_UPDATE = ["stage", "review_notes"]
 AGENT_STATUSES = {"Drafted", "Reviewed", "Superseded"}  # Approved = John; Pushed/Failed = push skill
 REPS = {"Todd Cencich", "Rob Andersen", "Patrick Dolan"}
 

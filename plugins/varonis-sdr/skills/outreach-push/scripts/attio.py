@@ -4,9 +4,9 @@ import json, os, urllib.request, urllib.error
 BASE = "https://api.attio.com/v2"
 
 # The ONLY fields the push skill may read and write.
-DRAFT_READ = ["name", "person", "campaign", "kind", "subject", "body", "status", "drafted_at"]
+DRAFT_READ = ["name", "person", "campaign", "kind", "subject", "body", "stage", "drafted_at"]
 PERSON_READ = ["name", "email_addresses", "outreach_prospect_id"]
-DRAFT_WRITE = ["status", "pushed_at", "push_result"]
+DRAFT_WRITE = ["stage", "pushed_at", "push_result"]
 SEQUENCE_ID = "1419"
 
 
