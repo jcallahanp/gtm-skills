@@ -39,3 +39,8 @@ Some old company records were merged into combined records (subsidiaries, rename
 ## outreach-push
 
 Reads only Email Drafts with stage Approved and kind Email. Cleans them mechanically (removes the greeting to the person and any sign-off, because sequence 1419 adds "Hi {first name}," and the signature), builds the `<p>` HTML, and starts Clay "Email Send Workflow" (`wf_0tmyifbTzDS2gDK6xdo`, sequence 1419) through the Clay connector, one draft at a time, and reads the workflow decision. Writes only stage (Pushed/Failed), `pushed_at`, `push_result` on the draft. John approves drafts by name in chat; "send those" is standing approval to push all of them. The workflow's manual trigger must be live (see the skill's Needs).
+
+## Loading new people from a Salesforce lookup doc
+1. John puts a "Past Meeting Lookup" doc (format: `Name — Company (Title)`, then Last meeting / Concept / Evidence / Blockers / Confidence) in the Past Meetings Skills Drive folder.
+2. Export it as text/plain and run `python3 tools/attio-load/load_lookup_doc.py DOC.txt` (dry run), then with `--apply` (writes, then reads back).
+3. Run the cpm-email skill with `cpm_read.py people --ids ID,ID,...`. A meeting in the last 180 days removes the person automatically.

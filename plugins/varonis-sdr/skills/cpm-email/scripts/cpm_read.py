@@ -1,6 +1,6 @@
 """Read everything the CPM skill needs from Attio, allow-listed.
 Usage:
-  python3 cpm_read.py people [--only-pending]   -> people in "Prioritized - Past Meetings" + their latest CPM draft status
+  python3 cpm_read.py people [--only-pending] [--ids ID,ID,...]   -> people in "Prioritized - Past Meetings" + their latest CPM draft status
   python3 cpm_read.py updates                   -> Varonis Updates rows
   python3 cpm_read.py rules                     -> Writing Rules record "CPM email" (rules + examples)
   python3 cpm_read.py drafts                    -> all CPM Email Drafts (newest first)
@@ -9,6 +9,21 @@ Usage:
 """
 import datetime, json, sys
 from attio import call, flat, project, PERSON_READ, COMPANY_READ, UPDATE_READ, DRAFT_READ, REPS
+
+
+def ids_people(ids):
+    # Named people outside the view (e.g. loaded from a Salesforce lookup doc). Same safety rules:
+    # not disqualified, has a phone, and no meeting in the last 180 days.
+    cut = (datetime.date.today() - datetime.timedelta(days=180)).isoformat()
+    keep = []
+    for rid in ids:
+        r = call("GET", f"/objects/people/records/{rid}")["data"]
+        v = r["values"]
+        if flat(v, "disqualified"): continue
+        pm = flat(v, "past_meeting_date")
+        if pm and not pm < cut: continue
+        keep.append(r)
+    return keep
 
 
 def view_people():
@@ -44,10 +59,10 @@ def latest_by_person(rows):
     return out
 
 
-def people(only_pending):
+def people(only_pending, ids=None):
     out, companies = [], {}
     live = latest_by_person(drafts())
-    for r in view_people():
+    for r in (ids_people(ids) if ids else view_people()):
         p = project(r, PERSON_READ)
         cid = p.pop("company")
         if cid and cid not in companies:
@@ -82,5 +97,5 @@ if "--exclude" in sys.argv:
 
 if __name__ == "__main__":
     cmd = sys.argv[1]
-    data = {"people": lambda: people("--only-pending" in sys.argv), "updates": updates, "rules": rules, "drafts": drafts}[cmd]()
+    data = {"people": lambda: people("--only-pending" in sys.argv, sys.argv[sys.argv.index("--ids") + 1].split(",") if "--ids" in sys.argv else None), "updates": updates, "rules": rules, "drafts": drafts}[cmd]()
     print(json.dumps(data, indent=1, ensure_ascii=False))
