@@ -5,7 +5,8 @@ John's Claude skills, one place. Each plugin folder holds skills; each skill hol
 ```
 .claude-plugin/marketplace.json        catalog (Claude Code plugin marketplace)
 plugins/varonis-sdr/                   plugin: SDR skills that run off Attio
-  skills/cpm-email/                    reconnect emails for past meetings
+  skills/cpm-email/                    drafts reconnect emails for past meetings (Attio Email Drafts)
+  skills/outreach-push/                pushes Approved drafts to Outreach via Clay (sequence 1419)
 tools/attio-load/                      one-off loaders that set up Attio for a skill
 PROGRESS.md                            current state – read first
 ```
@@ -34,3 +35,7 @@ Secrets: `ATTIO_API_KEY` from the environment. Never commit keys or prospect dat
 ## Company mapping in Attio
 
 Some old company records were merged into combined records (subsidiaries, renamed parents), for example "FIS (Fidelity Information Services, FIS Global)". The skill always follows the person's current Attio company link for `account_rep` and the company name, never the name in the old source sheet.
+
+## outreach-push
+
+Reads only Email Drafts with status Approved and kind Email. Cleans them mechanically (removes the greeting to the person and any sign-off, because sequence 1419 adds "Hi {first name}," and the signature), builds the `<p>` HTML, and starts Clay "Daily Queue - API" (sequence 1419) one draft at a time. Writes only status (Pushed/Failed), `pushed_at`, `push_result` on the draft. Dry run first, push only on John's yes.

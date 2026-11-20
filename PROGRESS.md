@@ -12,11 +12,13 @@ Done
 
 - Email Drafts object created (2026-11-20) with drafted_at; skill writes drafts there. Tested create → supersede → review → Approved lock; test records deleted.
 
+- Old Attio Writing Rules renamed ARCHIVED; past_meeting_context, past_meeting_summary, meeting_context archived; old attio-* skills removed from claude.ai by John.
+
 Open
 - 11 companies have no rep in Attio (no combined parent record with a rep either) → emails name no rep.
 - 2 disputed stall reasons written as Unknown (Jeff Morris, Phillip Graves).
 - Where the skill runs: local Claude Code plugin, or upload to claude.ai skills for cloud/Cowork.
 
 Next
-- Build the outreach-push skill (Clay "Daily Queue - API"; needs CPM sequence ID).
+- outreach-push skill built (sequence 1419, greeting/sign-off stripped by script). Not yet run against Clay: first live push needs John's yes.
 - Run the skill on 3 people with a separate reviewer, then the full batch (32 drafts + 9 cards).
