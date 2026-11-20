@@ -50,3 +50,5 @@ John: "draft them out for all the eligible past meetings and then approve and pu
 - Totals: 8 added to 1419 (plus Nahuel earlier = 9). 14 approved emails not added (10 active elsewhere, 2 opted out, 2 already in 1419 before).
 - Retry after John removed people from sequences (clay task mcp-task_0tot9e0EnFNEZ78owhd): added Jeff Morris, Bernita McCully, Rick DeLoach. Still active elsewhere: 6 in "Callahan: Email Sequence", Philip Tyson in "Email Only". push_approve.py now also re-approves Failed drafts (retry).
 - Totals now: 12 in 1419 (incl. Nahuel).
+- Retry 2 (clay task mcp-task_0tota3yvZqZSTgxESQK): added Darin Gottman, Chris Gervich, Hermann Kelley, Kong Tran, Steve Hickle, Sam Kolars. Philip Tyson still active in "Email Only".
+- Totals now: 18 in 1419 (incl. Nahuel).
