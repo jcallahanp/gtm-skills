@@ -48,3 +48,5 @@ John: "draft them out for all the eligible past meetings and then approve and pu
 - Open: workflow gap (no check for past 1419 membership); John to decide on the 9 + 2 + 2 skipped/errored, 9 cards, 4 no-concept people, 2 held.
 - Rewrites round 2: Phillip Graves and Scott Edmonston pushed (1419, states 277768/277769); Philip Tyson skipped (active in "Email Only"); Samuel Wolf failed review twice → John.
 - Totals: 8 added to 1419 (plus Nahuel earlier = 9). 14 approved emails not added (10 active elsewhere, 2 opted out, 2 already in 1419 before).
+- Retry after John removed people from sequences (clay task mcp-task_0tot9e0EnFNEZ78owhd): added Jeff Morris, Bernita McCully, Rick DeLoach. Still active elsewhere: 6 in "Callahan: Email Sequence", Philip Tyson in "Email Only". push_approve.py now also re-approves Failed drafts (retry).
+- Totals now: 12 in 1419 (incl. Nahuel).
