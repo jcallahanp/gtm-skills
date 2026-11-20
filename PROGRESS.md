@@ -59,3 +59,4 @@ John: "draft them out for all the eligible past meetings and then approve and pu
 - Email Drafts: new status-type field `stage` (values copied 44/44), old select `status` archived; all scripts use `stage`. Kanban view "Email Drafts – Kanban" (id f1312ab6…), hides Superseded.
 - cpm_read --only-pending now means "no draft at all" (a Failed push is no longer redrafted).
 - Next: SPEC-attio-reliability.md (loop-you-in pilot + Attio data inventory) and rule changes from John's 2026-11-20 examples (Robert, Brian Peck, Brian/Scott, Kevin).
+- Rules v9 applied: Attio Writing Rules record updated; Drive "CPM Email Template – Instructions and Example v9" (v8 SUPERSEDED); copy in docs/CPM_rules_v9.md; cpm_check: new asks, inactive = fail, route no longer forces cards; SKILL routing per rules 0.3. Rule 8 waits for SPEC-attio-reliability.md.

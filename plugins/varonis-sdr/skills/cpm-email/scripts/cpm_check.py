@@ -6,11 +6,14 @@ today = datetime.date.fromisoformat(sys.argv[3]) if len(sys.argv) > 3 else datet
 plan_year = today.year + 1 if today.month >= 10 else today.year
 asks = ["Might one day this week afford 30 minutes for this convo?",
         "Would sometime next week afford 30 minutes for this conversation?",
-        "Think you could squeeze 30 minutes in for this convo before the holidays?"]
+        "Think you could squeeze 30 minutes in for this convo before the holidays?",
+        "Would one day next week afford 30 minutes for this convo?",
+        "Would some time next week afford 30 minutes for this conversation?",
+        "Would one day afford 30 minutes for this convo over the next few weeks?"]
 holiday_ok = (today.month == 11 and today.day >= 15) or today.month == 12
 paras = [x.strip() for x in re.split(r"\n\s*\n", body) if x.strip()]
 fails = []
-if p.get("cpm_route") != "Draft": fails.append("route is not Draft – write a card instead")
+if "Inactive email" in (p.get("cpm_route_reason") or []): fails.append("inactive email – no draft (disqualify)")
 if len(paras) != 4: fails.append(f"{len(paras)} paragraphs, need 4")
 if paras and paras[-1] not in asks: fails.append("¶4 is not an approved ask word for word")
 if paras and paras[-1] == asks[2] and not holiday_ok: fails.append("holiday ask outside mid-Nov–Dec")
